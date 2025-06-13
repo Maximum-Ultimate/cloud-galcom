@@ -27,7 +27,7 @@ jobs:
           port: 22
           script: |
             # Ensure npm and node are in the PATH
-            export PATH=$PATH:/home/${{ secrets.CLGALCOM_USER }}/.nvm/versions/node/v22.15.1/bin
+            export PATH=$PATH:/home/senimankode-cloud-galcom/.nvm/versions/node/v22.16.0/bin
           
             # Check if npm is available
             which npm || { echo "npm not found"; exit 1; }
@@ -35,7 +35,7 @@ jobs:
             echo "Starting deployment process..."
 
             # Navigate to the application's directory
-            cd /home/abracodebra-cloud-mlf25/htdocs/cloud-mlf25.abracodebra.com/mlf25-cloud || exit
+            cd /home/senimankode-cloud-galcom/htdocs/cloud-galcom.senimankode.id/cloud-galcom || exit
 
             # Pull the latest changes from the GitHub repository
             git pull origin main
@@ -53,7 +53,7 @@ jobs:
             pm2 startup systemd -u ${USER} --hp /home/${USER}
 
             # Run database migrations
-             npx knex@latest migrate:latest
+             npx knex migrate:latest
 
             # Exit with a success message
             echo "Deployment complete!"
