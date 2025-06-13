@@ -3,9 +3,9 @@ module.exports = {
     client: 'mysql2',
     connection: {
       host: 'localhost',
-      user: 'root',
-      password: '',
-      database: 'db_samsungGalcom'
+      user: 'USRdbSamsungGalcom',
+      password: 'n4UCql8kfaMMZeQoQ8No',
+      database: 'dbSamsungGalcom'
     },
     migrations: {
       directory: './migrations'
